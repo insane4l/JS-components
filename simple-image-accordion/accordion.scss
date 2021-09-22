@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+.accordion {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 6%;
+    margin: 0;
+    list-style: none;
+    background-color: #222;
+    &__item {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        flex: 1;
+        margin: 0 8px;
+        border-radius: 22px;
+        overflow: hidden;
+        background-color: #111;
+        cursor: pointer;
+        transition: all 0.6s ease-out;
+        &_active {
+            flex: 5;
+        }
+        &-title, &-subtitle {
+            color: #fff;
+            text-shadow: 1px 1px 22px rgba(red, 0.6);
+        }
+        &-title {
+            position: absolute;
+            bottom: 0;
+            left: 8px;
+            padding: 10px 0;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 14px;
+            transition: all 0.4s ease-in-out
+        }
+        &-subtitle {
+            position: absolute;
+            bottom: 50%;
+            right: 50%;
+            transform: translateX(50%);
+            font-family: 'Anton', sans-serif;
+            font-size: 30px;
+            opacity: 0;
+            transition: all 0.4s ease-in-out
+        }
+        &-image {
+            height: 100%;
+        }
+    }
+}
+
+
+.main__image {
+    display: none;
+}
+.accordion__item_active {
+    .preview__image {
+        display: none;
+    }
+    .main__image {
+        display: block;
+    }
+    .accordion__item {
+        &-title {
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            padding: 20px 0;
+            font-size: 33px;
+            opacity: 0.7;
+        }
+        &-subtitle {
+            display: block;
+            bottom: 20px;
+            right: 20px;
+            transform: translateX(0);
+            font-size: 100px;
+            line-height: 100px;
+            opacity: 0.7;
+        }
+    }
+}
