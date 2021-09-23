@@ -28,7 +28,7 @@ body {
         overflow: hidden;
         background-color: #111;
         cursor: pointer;
-        transition: all 0.6s ease-out;
+        transition: all 0.6s ease-in;
         &_active {
             flex: 5;
         }
