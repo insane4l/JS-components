@@ -1,0 +1,129 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.winners-pedestal {
+  width: 100%;
+  min-height: 100%;
+  padding: 50px 0 50px 50px;
+  background: url("https://wallpaperaccess.com/download/supercross-1795868");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.winners-pedestal__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.start__block-image {
+  display: block;
+  max-width: 200px;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.start__block .rider__cols {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 420px;
+  margin-bottom: 0;
+}
+
+.start__block .rider__col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  width: 200px;
+  height: 130px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 15px 4px #8848a8;
+          box-shadow: 0 0 15px 4px #8848a8;
+  border: 5px solid #444;
+  border-radius: 10px;
+}
+
+.pedestal__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 626px;
+  margin-left: 25px;
+}
+
+.rider__cols {
+  position: relative;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-bottom: -130px;
+}
+
+.rider__col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.rider__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 130px;
+}
+
+.rider__item-img {
+  position: relative;
+  width: 100%;
+}
+
+.pedestal {
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.pedestal__img {
+  width: 100%;
+}
+/*# sourceMappingURL=pedestal.css.map */
