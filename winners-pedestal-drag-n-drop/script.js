@@ -1,9 +1,21 @@
-const riders = document.querySelectorAll('.rider__item');
-const placeholders = document.querySelectorAll('.rider__placeholder');
-const pedestalPlaceholders = document.querySelectorAll('.pedestal__block .rider__placeholder');
+const riders = document.querySelectorAll('.rider__item'),
+      placeholders = document.querySelectorAll('.rider__placeholder'),
+      pedestalPlaceholders = document.querySelectorAll('.pedestal__block .rider__placeholder'),
+      restartBtn = document.querySelector('#restart-btn');
 
-let selectedRider;
-let startingPlace;
+let selectedRider, startingPlace;
+
+
+
+// restart button returns riders to start position 
+//(+add contains-item class to start position placeholders and remove from pedestal placeholders)
+restartBtn.addEventListener('click', () => {
+    restartBtn.classList.add('spin');
+    clearResults();
+    setTimeout(() => {
+        restartBtn.classList.remove('spin');
+    }, 3000)
+});
 
 function clearResults(ridersCount = 3) {
     for (let i = 0; i <= (ridersCount - 1); i++) {
@@ -14,22 +26,10 @@ function clearResults(ridersCount = 3) {
         }
     }
 }
-document.querySelector('.start__block-image').addEventListener('click', () => {
-    document.querySelector('.start__block-image').classList.add('spin');
-    clearResults();
-    setTimeout(() => {
-        document.querySelector('.start__block-image').classList.remove('spin');
-    }, 3000)
-    
-});
-
-function checkIfDropIsAllowed(target) {
-    if (target.classList.contains('rider__placeholder') && target.children.length === 0) {
-        return true
-    }
-}
 
 
+
+// drag rider-items styles manipulation
 for (const item of riders) {
     item.addEventListener('dragstart', dragstart);
     item.addEventListener('dragend', dragend);
@@ -43,12 +43,16 @@ function dragstart(e) {
     selectedRider = e.target;
     startingPlace = e.target.closest('.rider__placeholder');
 }
+
 function dragend(e) {
     e.target.classList.remove('hide', 'dragging');
 }
 
 
 
+
+// rider-placeholders(start-placeholders and pedestal-placeholders)
+// drag options, styles manipulation
 for (const item of placeholders) {
     item.addEventListener('dragenter', dragenter, false);
     item.addEventListener('dragleave', dragleave, false);
@@ -56,6 +60,11 @@ for (const item of placeholders) {
     item.addEventListener('dragover', dragover, false);
 }
 
+function checkIfDropIsAllowed(target) {
+    if (target.classList.contains('rider__placeholder') && target.children.length === 0) {
+        return true
+    }
+}
 
 function dragenter(e) {
     let isDropAllowed = checkIfDropIsAllowed(e.target);
@@ -64,9 +73,11 @@ function dragenter(e) {
     }
     
 }
+
 function dragleave(e) {
     e.target.classList.remove('draghovered')
 }
+
 function drop(e) {
     let isDropAllowed = checkIfDropIsAllowed(e.target);
     if (isDropAllowed) {
@@ -77,17 +88,6 @@ function drop(e) {
     }
 }
 
-
 function dragover(e) {
     e.preventDefault();
 }
-
-
-// document.addEventListener("drag", function(event) {
-//     setTimeout( () => {
-//         event.target.style.display = 'none'
-//     }, 0)
-//     // 
-//     event.target.classList.add('drag');
-//     console.log("drag");
-// });
