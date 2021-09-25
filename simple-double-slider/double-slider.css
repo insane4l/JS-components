@@ -1,0 +1,78 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.slider__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+.slider__controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: absolute;
+  top: 50%;
+  left: calc(38% - 40px);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 80px;
+  z-index: 999;
+}
+
+.slider__controls-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slider__controls .up-btn {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.slider__list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.slider__list-item {
+  height: 100%;
+}
+
+.slider .secondary__list {
+  width: 38%;
+  background-color: green;
+}
+
+.slider .main__list {
+  width: 62%;
+  background-color: yellow;
+}
+/*# sourceMappingURL=double-slider.css.map */
