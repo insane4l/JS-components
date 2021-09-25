@@ -8,7 +8,7 @@ body {
   height: 100vh;
 }
 
-.winners-pedestal {
+.main-wrapper {
   width: 100%;
   min-height: 100%;
   padding: 50px 0 50px 50px;
@@ -27,6 +27,70 @@ body {
           align-items: flex-end;
 }
 
+.rider__placeholders {
+  position: relative;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.rider__placeholder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.rider__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 130px;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.rider__item-img {
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.spin {
+  -webkit-animation: spin 0.6s linear;
+          animation: spin 0.6s linear;
+}
+
 .start__block-image {
   display: block;
   max-width: 200px;
@@ -34,28 +98,43 @@ body {
   margin-bottom: 30px;
   border-radius: 10px;
   background-color: #fff;
+  -webkit-box-shadow: 0 0 15px 4px #fff;
+          box-shadow: 0 0 15px 4px #fff;
+  -webkit-transition: rotate 0.7;
+  transition: rotate 0.7;
+  cursor: pointer;
 }
 
-.start__block .rider__cols {
+.start__block-image:hover {
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+.start__block .rider__placeholders {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   height: 420px;
-  margin-bottom: 0;
 }
 
-.start__block .rider__col {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
+.start__block .rider__placeholder {
   width: 200px;
   height: 130px;
-  background-color: #fff;
-  -webkit-box-shadow: 0 0 15px 4px #8848a8;
-          box-shadow: 0 0 15px 4px #8848a8;
-  border: 5px solid #444;
+  background: radial-gradient(circle, white 15%, #1c46ba 100%);
+  -webkit-box-shadow: 0 0 10px 2px #5c7bd2;
+          box-shadow: 0 0 10px 2px #5c7bd2;
   border-radius: 10px;
+}
+
+.start__block .draghovered {
+  background: radial-gradient(circle, white 50%, #1c46ba 100%) !important;
+}
+
+.start__block .contains-item {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 15px 4px #fff;
+          box-shadow: 0 0 15px 4px #fff;
 }
 
 .pedestal__block {
@@ -70,60 +149,83 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 626px;
+  height: 215px;
   margin-left: 25px;
+  margin-bottom: 60px;
+  background-image: url("https://image.freepik.com/free-vector/neon-podiums-glowing-in-darkness-realistic-vector_1441-3745.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 22px;
+  -webkit-box-shadow: 0 0 15px 10px #8848a8;
+          box-shadow: 0 0 15px 10px #8848a8;
 }
 
-.rider__cols {
-  position: relative;
-  z-index: 999;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 100%;
-  margin-bottom: -130px;
+.pedestal__block .rider__placeholders {
+  height: 104px;
+  margin-top: 33px;
 }
 
-.rider__col {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.pedestal__block .rider__placeholder {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.rider__item {
+.pedestal__block .contains-item.pedestal__place, .pedestal__block .draghovered.pedestal__place {
+  position: relative;
+}
+
+.pedestal__block .contains-item.pedestal__place::after, .pedestal__block .draghovered.pedestal__place::after {
+  content: '';
+  position: absolute;
+  top: -77px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 130px;
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+  border-radius: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #fff;
 }
 
-.rider__item-img {
-  position: relative;
-  width: 100%;
+.pedestal__block .contains-item.second-place::after, .pedestal__block .draghovered.second-place::after {
+  content: '2';
+  background-color: #59c2cf;
+  -webkit-box-shadow: 0 0 15px 10px #59c2cf;
+          box-shadow: 0 0 15px 10px #59c2cf;
 }
 
-.pedestal {
-  width: 100%;
-  border-radius: 22px;
-  overflow: hidden;
+.pedestal__block .contains-item.first-place::after, .pedestal__block .draghovered.first-place::after {
+  content: '1';
+  font-size: 40px;
+  background-color: #607ed7;
+  -webkit-box-shadow: 0 0 15px 10px #607ed7;
+          box-shadow: 0 0 15px 10px #607ed7;
 }
 
-.pedestal__img {
-  width: 100%;
+.pedestal__block .contains-item.third-place::after, .pedestal__block .draghovered.third-place::after {
+  content: '3';
+  background-color: #8848a8;
+  -webkit-box-shadow: 0 0 15px 10px #8848a8;
+          box-shadow: 0 0 15px 10px #8848a8;
+}
+
+.dragging {
+  border-bottom: 3px solid #8848a8;
+}
+
+.hide {
+  display: none;
 }
 /*# sourceMappingURL=pedestal.css.map */
