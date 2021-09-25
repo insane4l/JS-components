@@ -66,6 +66,18 @@ body {
   cursor: pointer;
 }
 
+.rider__item::after {
+  content: '#22';
+  display: block;
+  position: absolute;
+  top: -47px;
+  right: 25px;
+  font-family: sans-serif;
+  font-weight: 600;
+  color: #5ebd07;
+  text-shadow: 0 0 3px #111;
+}
+
 .rider__item-img {
   position: relative;
   background-color: transparent;
@@ -125,6 +137,11 @@ body {
   -webkit-box-shadow: 0 0 10px 2px #5c7bd2;
           box-shadow: 0 0 10px 2px #5c7bd2;
   border-radius: 10px;
+}
+
+.start__block .rider__item::after {
+  top: 5px;
+  right: -26px;
 }
 
 .start__block .draghovered {

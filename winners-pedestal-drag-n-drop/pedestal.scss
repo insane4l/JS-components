@@ -46,15 +46,16 @@ body {
         background-color: transparent;
         cursor: pointer;
         &::after {
-            // content: '';
-            // position: absolute;
-            // top: -15px;
-            // right: 0px;
-            // font-family: sans-serif;
-            // font-weight: 600;
+            content: '#22';
+            display: block;
+            position: absolute;
+            top: -47px;
+            right: 25px;
+            font-family: sans-serif;
+            font-weight: 600;
             // color: #fff;
-            // opacity: .8;
-            // display: block;
+            color: #5ebd07;
+            text-shadow: 0 0 3px #111;
         }
         &-img {
             position: relative;
@@ -98,6 +99,12 @@ body {
             box-shadow: 0 0 10px 2px #5c7bd2;
             // border: 2px solid #444;
             border-radius: 10px;
+        }
+        &__item {
+            &::after {
+                top: 5px;
+                right: -26px;
+            }
         }
     }
     .draghovered {
