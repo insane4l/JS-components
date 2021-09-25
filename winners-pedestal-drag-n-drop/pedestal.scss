@@ -36,9 +36,9 @@ body {
         justify-content: center;
     }
     &__item {
-        display: flex;
         position: relative;
         z-index: 1; // (HTML draggable element drags with parent background) fixed by z-index
+        display: flex;
         justify-content: center;
         align-items: center;
         width: 130px;
@@ -46,7 +46,7 @@ body {
         background-color: transparent;
         cursor: pointer;
         &::after {
-            content: '#22';
+            content: '';
             display: block;
             position: absolute;
             top: -47px;
@@ -63,15 +63,23 @@ body {
             width: 100%;
         }
     }
-}
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
+    &__item.rider-1 {
+        &::after {
+            content: '#199';
+        }
+    }
+    &__item.rider-2 {
+        &::after {
+            content: '#5';
+        }
+    }
+    &__item.rider-3 {
+        &::after {
+            content: '#2';
+        }
     }
 }
-.spin {
-    animation: spin 0.6s linear;
-}
+
 .start__block {
     &-image {
         display: block;
@@ -97,7 +105,6 @@ body {
             height: 130px;
             background: radial-gradient(circle, rgba(255,255,255,1) 15%, rgba(28,70,186,1) 100%);         
             box-shadow: 0 0 10px 2px #5c7bd2;
-            // border: 2px solid #444;
             border-radius: 10px;
         }
         &__item {
@@ -107,20 +114,9 @@ body {
             }
         }
     }
-    .draghovered {
-        background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(28,70,186,1) 100%) !important;
-    }
-    .contains-item {
-        background-color: #fff;
-        box-shadow: 0 0 15px 4px #fff;
-    }
-
 }
 
 .pedestal__block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 626px;
     height: 215px;
     margin-left: 25px;
@@ -140,6 +136,44 @@ body {
             flex: 1;
         }
     }
+}
+
+
+
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.spin {
+    animation: spin 0.6s linear;
+}
+
+
+
+
+
+//DRAG n DROP classes
+.dragging {
+    border-bottom: 3px solid #8848a8;
+    // cursor: move;
+}
+.hide {
+    display: none;
+}
+
+.start__block {
+    .draghovered {
+        background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(28,70,186,1) 100%) !important;
+    }
+    .contains-item {
+        background-color: #fff;
+        box-shadow: 0 0 15px 4px #fff;
+    }
+}
+
+.pedestal__block {
     .contains-item, .draghovered {
         &.pedestal__place{
             position: relative;
@@ -184,17 +218,5 @@ body {
             }
         }
     }
-}
-
-
-//drag n drop element classes
-
-
-.dragging {
-    border-bottom: 3px solid #8848a8;
-    // cursor: move;
-}
-.hide {
-    display: none;
 }
 
