@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -17,13 +19,14 @@ body {
     width: 100%;
     height: 100%;
     background-color: red;
+    overflow: hidden;
     &__controls {
         display: flex;
         justify-content: center;
         align-items: flex-end;
         position: absolute;
         top: 50%;
-        left: calc(38% - 40px);
+        left: calc(35% - 40px);
         transform: translateY(-50%);
         height: 80px;
         z-index: 999;
@@ -33,6 +36,18 @@ body {
             border: none;
             margin: 0;
             padding: 0;
+            cursor: pointer;
+            &:nth-child(1) {
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+            }
+            &:nth-child(2) {
+                border-bottom-right-radius: 6px;
+                border-top-right-radius: 6px;
+            }
+            &:hover {
+                opacity: .6;
+            }
         }
         .down-btn {
 
@@ -48,26 +63,67 @@ body {
         list-style: none;
         &-item {
             height: 100%;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
         }
     }
     .secondary__list {
-        width: 38%;
+        width: 35%;
         background-color: green;
         &-item {
-
-        }
-        &-image {
-
+            align-items: center;
+            padding: 0 60px;
+            background-color: #111;
+            .secondary__item {
+                &-content {
+                    font-weight: 400;
+                    color: #fff;
+                }
+                &-header {
+                    display: flex;
+                    height: 200px;
+                }
+                &-photo {
+                    display: flex;
+                    justify-content: center;
+                    width: 150px;
+                    height: 100%;
+                    border-radius: 6px;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+                &-titles {
+                    margin-left: 10px;
+                }
+                &-title {
+                    margin: 0;
+                    font-size: 30px;
+                }
+                &-subtitle {
+                    font-family: Anton, sans-serif;
+                    font-size: 100px;
+                    line-height: 100px;
+                }
+                &-descr {
+                    margin-top: 20px;
+                    font-size: 20px;
+                }
+            }
         }
     }
     .main__list {
-        width: 62%;
+        width: 65%;
         background-color: yellow;
         &-item {
-
+            background-color: #555;
+            
         }
         &-image {
-
+            // width: 100%; todo: media query when screen height very small
         }
     }
 }
