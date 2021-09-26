@@ -22,6 +22,24 @@ document.addEventListener('DOMContentLoaded', function() {
         changeSlide('up');
     })
 
+    document.addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowDown') {
+            downBtn.classList.add('active')
+            changeSlide('down');
+        } else if (e.key === 'ArrowUp') {
+            upBtn.classList.add('active')
+            changeSlide('up');
+        }
+    })
+    document.addEventListener('keyup', (e) => {
+        if(e.key === 'ArrowDown') {
+            downBtn.classList.remove('active')
+        } else if (e.key === 'ArrowUp') {
+            upBtn.classList.remove('active')
+        }
+    })
+    
+
 
     function changeSlide(direction) {
         if (direction === 'down') {
