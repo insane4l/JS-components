@@ -69,8 +69,10 @@ body {
         }
     }
     .secondary__list {
+        position: relative;
         width: 35%;
         background-color: green;
+        transition: transform 0.6s ease-in-out;
         &-item {
             align-items: center;
             padding: 0 60px;
@@ -116,8 +118,10 @@ body {
         }
     }
     .main__list {
+        position: relative;
         width: 65%;
         background-color: yellow;
+        transition: transform 0.6s ease-in-out;
         &-item {
             background-color: #555;
             
