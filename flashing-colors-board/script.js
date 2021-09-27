@@ -2,40 +2,42 @@ const board = document.querySelector('#board');
 const cursorRider = document.querySelector('#cursor-rider');
 const cursorFinish = document.querySelector('#cursor-finish');
 
-const colors = ['#7df48a', '#e771fb', '#f4ab4b', '#76f9fb', '#e93f33', '#faf879'];
-const BOARD_ITEMS = 400;
 
-for (let i = 0; i < BOARD_ITEMS; i++) {
-    const item = document.createElement('div');
-    item.classList.add('board__item');
+function createBoard(container, itemsCount) {
+    for (let i = 0; i < itemsCount; i++) {
+        const item = document.createElement('div');
+        item.classList.add('board__item');
 
-    item.addEventListener('mouseover', () => {
-        setColor(item);
-    });
+        item.addEventListener('mouseover', setColor);
+        item.addEventListener('mouseleave', clearColor);
 
-    item.addEventListener('mouseleave', () => {
-        clearColor(item)
-    });
+        container.append(item);
+    }
 
-    board.append(item);
+    function setColor(e) {
+        const item = e.target;
+        const color = getRandomColor();
+        item.style.backgroundColor = color;
+        item.style.boxShadow = `0 0 2px ${color}, 0 0 2px ${color}, 0 0 10px ${color}`;
+        item.style.border = 'none';
+        
+    }
+
+    function clearColor(e) {
+        const item = e.target;
+        item.style.backgroundColor = 'transparent';
+        item.style.boxShadow = '';
+    }
+
+    function getRandomColor() {
+        const red = Math.floor(Math.random() * 256);
+        const green = Math.floor(Math.random() * 256);
+        const blue = Math.floor(Math.random() * 256);
+        return `rgb(${red}, ${green}, ${blue})`;
+    }
 }
 
-function setColor(item) {
-    const color = getRandomColor();
-    item.style.backgroundColor = color;
-    item.style.boxShadow = `0 0 2px ${color}, 0 0 2px ${color}, 0 0 10px ${color}`;
-}
-
-function clearColor(item) {
-    item.style.backgroundColor = '#222';
-    item.style.boxShadow = '0 0 2px #111';
-}
-
-function getRandomColor() {
-    const index = Math.floor(Math.random() * colors.length);
-    return colors[index];
-}
-
+createBoard(board, 400);
 
 
 board.addEventListener('mouseover', showCustomCursor);
