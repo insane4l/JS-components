@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+ul {
+  padding-left: 0;
+  margin-top: 0;
+  list-style-type: none;
+}
+
+.game-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 150px;
+}
+
+.section-bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background-boundary {
+  z-index: -2;
+  background: linear-gradient(100deg, #22c1c3 0%, #fdbb2d 100%);
+}
+
+.section-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  color: #cd362c;
+}
+
+.button {
+  padding: 10px;
+  border: 2px solid #cd362c;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: rgba(255, 255, 0, 0.8);
+  color: #cd362c;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.7;
+}
+
+.main__section-title {
+  font-family: Syncopate, sans-serif;
+  font-size: 44px;
+  text-shadow: 0 0 10px yellow, 0 0 20px #fff, 0 0 30px yellow;
+}
+
+.main__section-button {
+  position: relative;
+  display: block;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  max-width: 200px;
+  margin-top: 100px;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.options__section-title {
+  text-shadow: 0 0 10px yellow, 0 0 20px #fff;
+}
+
+.options__section .options__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 30px auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 500px;
+}
+
+.options__section .options__list-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 6px;
+}
+
+.options__section .options__list-item .game-duration__button {
+  width: 100%;
+}
+
+.game__section {
+  padding-top: 50px;
+}
+
+.game__section-title {
+  text-shadow: 0 0 10px yellow, 0 0 20px #fff;
+}
+
+.game__section-board {
+  position: relative;
+  margin: 30px auto;
+  width: 600px;
+  height: 400px;
+  border-radius: 15px;
+  background-color: #333;
+  -webkit-box-shadow: 0 0 10px yellow, 0 0 20px #fff, 0 0 30px yellow;
+          box-shadow: 0 0 10px yellow, 0 0 20px #fff, 0 0 30px yellow;
+}
+
+.flashed {
+  -webkit-box-shadow: 0 0 10px yellow, 0 0 20px #fff, 0 0 30px yellow;
+          box-shadow: 0 0 10px yellow, 0 0 20px #fff, 0 0 30px yellow;
+}
+
+.move_left {
+  left: 40%;
+}
+
+.move_right {
+  left: 60%;
+}
+/*# sourceMappingURL=aim-trainer.css.map */
