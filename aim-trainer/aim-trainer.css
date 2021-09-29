@@ -7,6 +7,7 @@
 body {
   margin: 0;
   height: 100vh;
+  overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,6 +23,10 @@ ul {
 .game-wrapper {
   width: 100%;
   height: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
 
 .section {
@@ -143,5 +148,26 @@ ul {
 
 .move_right {
   left: 60%;
+}
+
+.game__section-board .rider {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.game__section-board .rider1 {
+  background-image: url(./images/rider1.png);
+}
+
+.game__section-board .rider2 {
+  background-image: url(./images/rider2.png);
+}
+
+.game__section-board .rider3 {
+  background-image: url(./images/rider3.png);
 }
 /*# sourceMappingURL=aim-trainer.css.map */

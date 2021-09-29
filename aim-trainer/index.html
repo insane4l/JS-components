@@ -8,7 +8,7 @@
     <title>Aim Trainer</title>
 </head>
 <body>
-    <div class="game-wrapper">
+    <div class="game-wrapper" id="game-wrapper">
         <div class="section main__section">
             <h1 class="main__section-title section-title">Aim Trainer</h1>
             <a class="main__section-button button" id="start" href="#">Start Game</a>
@@ -20,16 +20,16 @@
             <h2 class="options__section-title section-title">Duration of the game</h2>
             <ul class="options__list" id="duration-list">
                 <li class="options__list-item">
-                    <button class="game-duration__button button">10 sec</button>
+                    <button class="game-duration__button button" data-duration="10">10 sec</button>
                 </li>
                 <li class="options__list-item">
-                    <button class="game-duration__button button">20 sec</button>
+                    <button class="game-duration__button button" data-duration="20">20 sec</button>
                 </li>
                 <li class="options__list-item">
-                    <button class="game-duration__button button">30 sec</button>
+                    <button class="game-duration__button button" data-duration="30">30 sec</button>
                 </li>
                 <li class="options__list-item">
-                    <button class="game-duration__button button">40 sec</button>
+                    <button class="game-duration__button button" data-duration="40">40 sec</button>
                 </li>
             </ul>
             <img src="https://wallpaperaccess.com/download/supercross-1795935" alt="background image" class="section-bg">
@@ -37,9 +37,11 @@
         </div>
     
         <div class="game__section section">
-            <h2 class="game__section-title section-title">Time left <span class="time-counter button" id="time">00:00</span></h2>
+            <h2 class="game__section-title section-title">Time left <span class="time-counter button" id="timer">00:00</span></h2>
             <div class="game__section-board" id="board">
-    
+                <!-- <div class="rider1 rider"></div>
+                <div class="rider2 rider"></div>
+                <div class="rider3 rider"></div> -->
             </div>
             <img src="https://wallpaperaccess.com/download/supercross-1795885" alt="background image" class="section-bg">
             <div class="background-boundary section-bg"></div>
