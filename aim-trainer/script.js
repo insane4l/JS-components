@@ -6,7 +6,7 @@ const gameTimer = document.getElementById('timer');
 const gameBoard = document.getElementById('board');
 
 
-const RIDER_STYLES = ['rider1', 'rider2', 'rider3']; // todo: create more riders + animations
+const RIDER_STYLES = ['rider1', 'rider2', 'rider3', 'rider4', 'rider5']; // todo: create more riders + animations
 let gameDuration, score;
 
 setInterval( () => {
@@ -66,10 +66,10 @@ function finishGame() {
 
 const successfulTarget = (target) => {
     score++;
-    target.classList.add('rider-jump');
+    target.classList.add('active');
     setTimeout( () => {
         target.remove();
-    }, 1000);
+    }, 800);
     createRider();
 }
 
@@ -78,9 +78,9 @@ function createRider() {
     const riderStyle = getRandomRider();
     const shadowColor = getRandomColor();
     const {width, height} = gameBoard.getBoundingClientRect()
-    const x = getRandomNumber(50, width - 50); // todo: with animation need more "padding" space
-    const y = getRandomNumber(50, height - 50); // todo: with animation need more TOP "padding" space (scale board size too)
-    // todo: create random rider sizes
+    const x = getRandomNumber(60, width - 60); // 60px rider width, height (+ animation but its normal)
+    const y = getRandomNumber(60, height - 60);
+
     rider.classList.add('rider');
     rider.classList.add(riderStyle);
     rider.style.top = `${y}px`;
