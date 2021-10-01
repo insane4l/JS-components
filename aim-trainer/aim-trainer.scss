@@ -7,7 +7,6 @@
 body {
     margin: 0;
     height: 100vh;
-    overflow: hidden; // todo: remove from body (create new wrapper)
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,11 +18,15 @@ ul {
     margin-top: 0;
     list-style-type: none;
 }
-
 .game-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.sections-wrapper {
    width: 100%;
    height: 100%;
-   transition: transform 0.2s ease-out;
+   transition: transform 0.5s ease-out;
 }
 .section {
     position: relative;
@@ -79,6 +82,7 @@ ul {
         margin-top: 100px;
         text-decoration: none;
         transition: all 0.5s;
+        animation: flashed 1s infinite, horisontal-move 4s infinite;
     }
 }
 
@@ -136,9 +140,6 @@ ul {
 
 
 // active elements styles
-.flashed {
-    box-shadow: 0 0 10px yellow, 0 0 20px #fff, 0 0 30px yellow;
-}
 
 .move_left {
     left: 40%;
@@ -206,6 +207,23 @@ ul {
 
 
 
+// start btn animations
+@keyframes flashed {
+    50% {
+        box-shadow: 0 0 10px yellow, 0 0 20px #fff, 0 0 30px yellow;
+    }
+}
+@keyframes horisontal-move {
+    0% {
+        left: 40%;
+    }
+    50% {
+        left: 60%;
+    }
+    100% {
+        left: 40%;
+    }
+}
 
 
 
