@@ -122,6 +122,22 @@ ul {
   padding-top: 50px;
 }
 
+.game__section #custom-cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.game__section .cursor-animation {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
 .game__section-title {
   text-shadow: 0 0 10px yellow, 0 0 20px #fff;
 }
@@ -132,7 +148,7 @@ ul {
   width: 600px;
   height: 400px;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: #85d2d0;
   -webkit-box-shadow: 0 0 10px yellow, 0 0 20px #fff, 0 0 30px yellow;
           box-shadow: 0 0 10px yellow, 0 0 20px #fff, 0 0 30px yellow;
 }
@@ -148,6 +164,22 @@ ul {
 
 .move_right {
   left: 60%;
+}
+
+.game__section-board {
+  cursor: none;
+}
+
+.game__section-board .result-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 30px;
+  color: #fff;
 }
 
 .game__section-board .rider {

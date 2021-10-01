@@ -4,10 +4,11 @@ const startBtn = document.getElementById('start');
 const durationList = document.getElementById('duration-list');
 const gameTimer = document.getElementById('timer');
 const gameBoard = document.getElementById('board');
+const customCursor = document.getElementById('custom-cursor');
 
 
-const RIDER_STYLES = ['rider1', 'rider2', 'rider3', 'rider4', 'rider5']; // todo: create more riders + animations
-let gameDuration, score;
+const RIDER_STYLES = ['rider1', 'rider2', 'rider3', 'rider4', 'rider5'];
+let gameDuration, timeLeft, score, boardHighlightingTimer;
 
 setInterval( () => {
     if (startBtn.classList.contains('move_left') ) {
@@ -48,21 +49,44 @@ gameBoard.addEventListener('click', (e) => {
     }
     if ( e.target.classList.contains('rider') ) {
         successfulTarget(e.target);
+        customCursor.classList.toggle('cursor-animation');
+    }
+})
+
+
+gameBoard.addEventListener('mousemove', moveCustomCursor);
+function moveCustomCursor(e) {
+    customCursor.style.left = `${e.clientX}px`;
+    customCursor.style.top = `${e.clientY}px`;
+}
+
+
+gameTimer.addEventListener('click', () => {
+    if (timeLeft === 0) {
+        startGame(gameDuration);
     }
 })
 
 function startGame(duration) {
     score = 0;
+    gameBoard.innerHTML = '';
     setGameDuration(duration);
-    startTimer(duration);
+    startTimer(timeLeft);
+    boardHighlightingTimer = startBoardHighlighting(1000);
     createRider();
 }
 
 function finishGame() {
-    console.log(`Your result is ${score} points in ${gameDuration} seconds`); // todo: clear childrens, create element with results, timer button textContent "Restart"
+    clearInterval(boardHighlightingTimer);
+    gameTimer.textContent = 'Restart';
+    const gameResult = document.createElement('h3');
+    gameResult.classList.add('result-title');
+    gameResult.textContent = `Your result is ${score} points in ${gameDuration} seconds`;
+    gameBoard.innerHTML = '';
+    gameBoard.append(gameResult);
 }
 
-// todo: timer button click event, start new game
+
 
 const successfulTarget = (target) => {
     score++;
@@ -76,7 +100,6 @@ const successfulTarget = (target) => {
 function createRider() {
     const rider = document.createElement('div');
     const riderStyle = getRandomRider();
-    const shadowColor = getRandomColor();
     const {width, height} = gameBoard.getBoundingClientRect()
     const x = getRandomNumber(60, width - 60); // 60px rider width, height (+ animation but its normal)
     const y = getRandomNumber(60, height - 60);
@@ -86,10 +109,16 @@ function createRider() {
     rider.style.top = `${y}px`;
     rider.style.left = `${x}px`;
     gameBoard.append(rider);
-    gameBoard.style.boxShadow = `0 0 10px ${shadowColor}, 0 0 20px ${shadowColor}, 0 0 30px ${shadowColor}`; // todo: change event that changes shadow (mb create new interval)
 
 }
 
+
+function startBoardHighlighting(interval) {
+    return setInterval( () => {
+        const shadowColor = getRandomColor();
+        gameBoard.style.boxShadow = `0 0 10px ${shadowColor}, 0 0 20px ${shadowColor}, 0 0 30px ${shadowColor}`;
+    }, interval)
+}
 
 function getRandomRider() {
     const index = getRandomNumber(0, RIDER_STYLES.length - 1);
@@ -115,21 +144,23 @@ const showSection = (sectionNumber) => {
 
 function setGameDuration (duration = 30) {
     gameDuration = duration;
+    timeLeft = duration;
 }
 
 function showTime(time) {
     gameTimer.textContent = `00:${time}`
 }
 
-function startTimer(timeLeft) {
-    showTime(timeLeft);
+function startTimer(time) {
+    showTime(time);
 
     const timerId = setInterval( () => {
-        if (timeLeft === 0) {
+        timeLeft = time;
+        if (time === 0) {
             finishGame();
             clearInterval(timerId);
         } else {
-            let currentTime = --timeLeft;
+            let currentTime = --time;
             if (currentTime < 10) {
                 currentTime = `0${currentTime}`;
             }
