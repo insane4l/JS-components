@@ -12,7 +12,7 @@ body {
   width: 100%;
   min-height: 100%;
   padding: 50px 0 50px 50px;
-  background: url("https://wallpaperaccess.com/download/supercross-1795868");
+  background: url("./images/body-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -142,7 +142,7 @@ body {
   height: 215px;
   margin-left: 25px;
   margin-bottom: 60px;
-  background-image: url("https://image.freepik.com/free-vector/neon-podiums-glowing-in-darkness-realistic-vector_1441-3745.jpg");
+  background-image: url("./images/pedestal.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

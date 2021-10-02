@@ -38,8 +38,8 @@ body {
   overflow: hidden;
   background-color: #111;
   cursor: pointer;
-  -webkit-transition: all 0.6s ease-out;
-  transition: all 0.6s ease-out;
+  -webkit-transition: all 0.6s ease-in;
+  transition: all 0.6s ease-in;
 }
 
 .accordion__item_active {

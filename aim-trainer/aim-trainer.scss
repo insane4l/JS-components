@@ -169,7 +169,7 @@ ul {
         background-size: contain;
     }
     .rider1 {
-        background-image: url(https://img3.freepng.ru/dy/f13ea8335fc84f59abaf7e50d1a1fd36/L0KzQYm3VME6N5R8fZH0aYP2gLBuTf1wfJD3eAtsbHWwg8X8jwQuepppgdDwLYfrdbbzifUue6F0iuY2YnnudX7rlgN1NZN0g9c2NXHnSYTsgcY1QGU6SKM3NkSzQYO8V8kyPWM5SaoBN0mzQoq9TwBvbz==/kisspng-motorcycle-stunt-riding-wheelie-sport-bike-dust-boke-5ad93ea6484501.640125791524186790296.png);
+        background-image: url(./images/rider1.png);
         &.active {
             animation: indian-air 0.8s linear;
         }
@@ -184,21 +184,21 @@ ul {
     }
     .rider3 {
         // top: 100px;
-        background-image: url(https://img3.freepng.ru/dy/1a78c9c6739d5b988de1ba2e7b0b6fab/L0KzQYm3VsI2N6p7kpH0aYP2gLBuTfVvbKZ3h592b4TygrTCgBxmNZ50jNHscnB2g377TgNpcaN5RdlyZoSwcrryhb1ia5RufNd3dD24coS4VcAyOmU5S6UCOD68QIm4VcYzPmI6SqsENUi3QYm5V8k1NqFzf3==/kisspng-enduro-motorcycle-motocross-t-shirt-gift-bike-accident-5b315012443378.9081562615299584182794.png);
+        background-image: url(./images/rider3.png);
         &.active {
             animation: whip 0.8s linear;
         }
     }
     .rider4 {
         // top: 150px;
-        background-image: url(https://img3.freepng.ru/dy/b3b782e3b34e23c89a22dfd7b2f12a6c/L0KzQYm3VcMxN5xwipH0aYP2gLBuTfZzbZZ4jOt1ZT3wf8X2gCJwe6QyfdDtdYLyc8P2kCMuc6VyRadrMHa2SYO6UPFjO5I4RqgAMUO0QYe6UcUzP2g3TKU7M0C3Q4q1kP5o/kisspng-freestyle-motocross-endurocross-ktm-5b0f39230ab3a3.6513116315277243230439.png);
+        background-image: url(./images/rider4.png);
         &.active {
             animation: backflip 0.8s linear; 
         }
     }
     .rider5 {
         // top: 200px; 
-        background-image: url(https://img3.freepng.ru/dy/203c4abb94184ba1de0f10113c60e581/L0KzQYm3VMAyN6Zpj5H0aYP2gLBuTf1wfJD3eAtsbHWweLbzjfV1e15yhAZ4cnP8c73sTgN1fZ95ReRyZHnxd370jCRwa6N0Rd94dHBmgrF6k702aZQ1faI5MEPmdInqUr4zOmk1TqI5MkG4QoO8WMk3QWc3TKs7LoDxd1==/kisspng-motorcycle-helmets-motorcycle-stunt-riding-motocro-motocross-5ac0e0003cd8c2.2280600215225896962492.png);
+        background-image: url(./images/rider5.png);
         &.active {
             animation: double-grab 0.8s linear;
         }
