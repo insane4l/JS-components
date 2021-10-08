@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     for (item of placeholderInputs) {
-        item.addEventListener('change', setRiderName)
+        item.addEventListener('change', setRiderName);
+        item.addEventListener('blur', setRiderName);
     }
 
     function toggleRiderSelection(e) {
@@ -21,23 +22,29 @@ document.addEventListener('DOMContentLoaded', function() {
         if ( riderPlaceholder.classList.contains('rider-selected') ) {
             riderPlaceholder.classList.remove('rider-selected');
         } else {
-            riderPlaceholder.classList.add('edit-name-mode')
+            const placeholderInput = riderPlaceholder.querySelector('.rider__placeholder-input')
+            riderPlaceholder.classList.add('edit-name-mode');
+            placeholderInput.focus();
         }
     }
 
     function setRiderName(e) {
         const targetPlaceholder = e.target.closest('.rider__placeholder');
 
-        if (e.target.value.length > 0) {
-            const riderName = targetPlaceholder.querySelector('.rider__placeholder-name');
+        if ( e.target.value.length <= 0 && targetPlaceholder.classList.contains('edit-name-mode') ) { // onChange and onBlur
+            targetPlaceholder.classList.remove('edit-name-mode');
+            return
+        }
 
+        if ( targetPlaceholder.classList.contains('edit-name-mode') ) { // onChange (the event will happen before onBlur)
+            const riderName = targetPlaceholder.querySelector('.rider__placeholder-name');
             riderName.textContent = e.target.value;
+            targetPlaceholder.classList.remove('edit-name-mode');
             e.target.value = '';
             targetPlaceholder.classList.add('rider-selected');
-            targetPlaceholder.classList.remove('edit-name-mode');
-        } else {
-            // targetPlaceholder.classList.remove('edit-name-mode');
-            // console.log('the name must contain at least 1 character'); // todo: change event not working when 0 symbols
-        }
+        } {/* else {
+            // onBlur WILL ALWAYS BE AFTER onChange)
+            // happens when the task of the function has already been completed
+        } */}
     }
 })
