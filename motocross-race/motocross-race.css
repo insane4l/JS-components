@@ -9,7 +9,17 @@ body {
   background-color: #444;
 }
 
-.block-title {
+.game-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.game-wrapper .section {
+  width: 100%;
+  height: 100%;
+}
+
+.section-title {
   text-align: center;
   font-size: 30px;
   color: #fff;
@@ -42,7 +52,6 @@ body {
 
 .rider__placeholders {
   position: relative;
-  z-index: 999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,6 +62,7 @@ body {
 
 .rider__placeholder {
   position: relative;
+  z-index: 999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,28 +101,28 @@ body {
   width: 100%;
 }
 
-.start__block {
+.start__section {
   width: 100%;
   padding: 20px 50px;
 }
 
-.start__block-title {
+.start__section-title {
   margin-bottom: 60px;
 }
 
-.start__block .rider-selected .selected-icon {
+.start__section .rider-selected .selected-icon {
   display: block;
 }
 
-.start__block .rider-selected .rider__placeholder-name {
+.start__section .rider-selected .rider__placeholder-name {
   display: block;
 }
 
-.start__block .edit-name-mode .rider__placeholder-input {
+.start__section .edit-name-mode .rider__placeholder-input {
   display: block;
 }
 
-.start__block .rider__placeholder {
+.start__section .rider__placeholder {
   width: 200px;
   height: 130px;
   -webkit-box-shadow: 0 0 15px 4px #fff;
@@ -122,12 +132,12 @@ body {
   cursor: pointer;
 }
 
-.start__block .rider__item::after {
+.start__section .rider__item::after {
   top: 5px;
   right: -26px;
 }
 
-.start__block .start-btn {
+.start__section .start-btn {
   display: block;
   width: 200px;
   padding: 10px;
@@ -141,17 +151,22 @@ body {
   cursor: pointer;
 }
 
-.start__block .start-btn:hover {
+.start__section .start-btn:hover {
   -webkit-transform: rotate(10deg);
           transform: rotate(10deg);
 }
 
-.race__block {
+.race__section {
   width: 100%;
   padding: 20px 50px;
 }
 
-.race__block .race__track-row {
+.race__section .race__track {
+  position: relative;
+}
+
+.race__section .race__track-row {
+  position: relative;
   width: 100%;
   height: 140px;
   background-color: #dba458;
@@ -159,13 +174,46 @@ body {
   border-bottom: 2px solid #ecd17e;
 }
 
-.finish__block {
+.race__section .race__track-row .rider__placeholder {
+  position: absolute;
+  width: 200px;
+  height: 130px;
+}
+
+.race__section .race__track-finish-col {
+  position: absolute;
+  z-index: 300;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #81543f;
+}
+
+.race__section .race__track-finish-col::before {
+  content: '';
+  position: relative;
+  z-index: 333;
+  left: -50px;
+  display: block;
+  width: 50px;
+  height: 100%;
+  background-image: url(./images/finish-line.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.finish__section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   padding: 20px 50px;
 }

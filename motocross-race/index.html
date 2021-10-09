@@ -8,82 +8,82 @@
     <title>Motocross Race</title>
 </head>
 <body>
-    <div class="start__block">
-        <h2 class="start__block-title block-title">Select riders and start the race</h2>
-        <div class="rider__placeholders">
-
-            <div class="rider__placeholder">
-                <div class="rider__placeholder-name"></div>
-                <div class="rider__item rider-1" draggable="true">
-                    <img src="./images/rider1.png" alt="rider" class="rider__item-img" draggable="false">
-                </div>
-                <img src="./images/selected.png" alt="selected" class="selected-icon">
-                <input class="rider__placeholder-input" placeholder="Enter rider name or num" type="text">
-            </div>
-
-            <div class="rider__placeholder">
-                <div class="rider__placeholder-name"></div>
-                <div class="rider__item rider-2" draggable="true">
-                    <img src="./images/rider2.png" alt="rider" class="rider__item-img" draggable="false">                   
-                </div>
-                <img src="./images/selected.png" alt="selected" class="selected-icon">
-                <input class="rider__placeholder-input" placeholder="Enter rider name or num" type="text">
-            </div>
-
-            <div class="rider__placeholder">
-                <div class="rider__placeholder-name"></div>
-                <div class="rider__item  rider-3" draggable="true">
-                    <img src="./images/rider3.png" alt="rider" class="rider__item-img" draggable="false">
-                </div>
-                <img src="./images/selected.png" alt="selected" class="selected-icon">
-                <input class="rider__placeholder-input" placeholder="Enter rider name or num" type="text">
-            </div>
-
-            <div class="rider__placeholder">
-                <div class="rider__placeholder-name"></div>
-                <div class="rider__item  rider-4" draggable="true">
-                    <img src="./images/rider4.png" alt="rider" class="rider__item-img" draggable="false">
-                </div>
-                <img src="./images/selected.png" alt="selected" class="selected-icon">
-                <input class="rider__placeholder-input" placeholder="Enter rider name or num" type="text">
-            </div>
-
-            <div class="rider__placeholder">
-                <div class="rider__placeholder-name"></div>
-                <div class="rider__item  rider-5" draggable="true">
-                    <img src="./images/rider5.png" alt="rider" class="rider__item-img" draggable="false">
-                </div>
-                <img src="./images/selected.png" alt="selected" class="selected-icon">
-                <input class="rider__placeholder-input" placeholder="Enter rider name or num" type="text">
-            </div>
-        </div>
-        <img class="start-btn" id="start-btn" src="./images/start-flags.png" alt="start race" draggable="false">
-    </div>
-
-    <div class="race__block">
-        <div class="race__track">
-            <div class="race__track-row"></div>
-            <div class="race__track-row"></div>
-            <div class="race__track-row"></div>
-            <div class="race__track-row"></div>
-            <div class="race__track-row"></div>
-        </div>
-    </div>
-
-    <div class="finish__block">
-        <div class="finish__pedestal">
+    <div class="game-wrapper" id="game-wrapper">
+        <div class="start__section section">
+            <h2 class="start__section-title section-title">Select riders and start the race</h2>
             <div class="rider__placeholders">
-                <div class="rider__placeholder pedestal__place second-place">
+    
+                <div class="rider__placeholder">
+                    <div class="rider__placeholder-name"></div>
+                    <div class="rider__item rider-1" draggable="true">
+                        <img src="./images/rider1.png" alt="rider" class="rider__item-img" draggable="false">
+                    </div>
+                    <img src="./images/selected.png" alt="selected" class="selected-icon">
+                    <input class="rider__placeholder-input" placeholder="Enter rider name or num" type="text">
                 </div>
     
-                <div class="rider__placeholder pedestal__place first-place">
+                <div class="rider__placeholder">
+                    <div class="rider__placeholder-name"></div>
+                    <div class="rider__item rider-2" draggable="true">
+                        <img src="./images/rider2.png" alt="rider" class="rider__item-img" draggable="false">                   
+                    </div>
+                    <img src="./images/selected.png" alt="selected" class="selected-icon">
+                    <input class="rider__placeholder-input" placeholder="Enter rider name or num" type="text">
                 </div>
     
-                <div class="rider__placeholder pedestal__place third-place">
+                <div class="rider__placeholder">
+                    <div class="rider__placeholder-name"></div>
+                    <div class="rider__item  rider-3" draggable="true">
+                        <img src="./images/rider3.png" alt="rider" class="rider__item-img" draggable="false">
+                    </div>
+                    <img src="./images/selected.png" alt="selected" class="selected-icon">
+                    <input class="rider__placeholder-input" placeholder="Enter rider name or num" type="text">
+                </div>
+    
+                <div class="rider__placeholder">
+                    <div class="rider__placeholder-name"></div>
+                    <div class="rider__item  rider-4" draggable="true">
+                        <img src="./images/rider4.png" alt="rider" class="rider__item-img" draggable="false">
+                    </div>
+                    <img src="./images/selected.png" alt="selected" class="selected-icon">
+                    <input class="rider__placeholder-input" placeholder="Enter rider name or num" type="text">
+                </div>
+    
+                <div class="rider__placeholder">
+                    <div class="rider__placeholder-name"></div>
+                    <div class="rider__item  rider-5" draggable="true">
+                        <img src="./images/rider5.png" alt="rider" class="rider__item-img" draggable="false">
+                    </div>
+                    <img src="./images/selected.png" alt="selected" class="selected-icon">
+                    <input class="rider__placeholder-input" placeholder="Enter rider name or num" type="text">
+                </div>
+            </div>
+            <img class="start-btn" id="start-btn" src="./images/start-flags.png" alt="start race" draggable="false">
+        </div>
+    
+        <div class="race__section section">
+            <div class="race__track" id="race-track">
+                <div class="race__track-row"></div>
+                <div class="race__track-finish-col"></div>
+            </div>
+        </div>
+    
+        <div class="finish__section section">
+            <div class="finish__pedestal">
+                <div class="rider__placeholders">
+                    <div class="rider__placeholder pedestal__place second-place">
+                    </div>
+        
+                    <div class="rider__placeholder pedestal__place first-place">
+                    </div>
+        
+                    <div class="rider__placeholder pedestal__place third-place">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
     
 
     <script src="./script.js"></script>

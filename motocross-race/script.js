@@ -1,9 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const ridersListItems = document.querySelectorAll('.start__block .rider__placeholder');
+    const ridersListItems = document.querySelectorAll('.start__section .rider__placeholder');
     const placeholderInputs = document.querySelectorAll('.rider__placeholder-input');
-    const selectedRiders = document.querySelectorAll('.start__block .rider__placeholder.rider-selected');
 
+    const gameWrapper = document.querySelector('#game-wrapper');
+    const raceTrack = document.querySelector('#race-track');
+    const startRaceBtn = document.querySelector('#start-btn');
+
+    let selectedRiders;
+
+    // SELECT RIDERS AND SET RIDERS NAMES
     for (item of ridersListItems) {
         item.addEventListener('click', toggleRiderSelection)
     }
@@ -46,5 +52,79 @@ document.addEventListener('DOMContentLoaded', function() {
             // onBlur WILL ALWAYS BE AFTER onChange)
             // happens when the task of the function has already been completed
         } */}
+    }
+
+
+
+
+    // START RACE
+    startRaceBtn.addEventListener('click', startGame);
+
+    function startGame() {
+        selectedRiders = getSelectedRiders();
+        showSection(2);
+        readyToRace();
+        startRace();
+    }
+
+    function readyToRace() {
+        const ridersCount = selectedRiders.length;
+        for (let i = 0; i < ridersCount; i++) {
+            createRiderRow(selectedRiders[i]);
+        }
+        setRidersSpeed(5, 15)
+    }
+
+    function createRiderRow(rider) {
+        const riderRow = document.createElement('div');
+        riderRow.classList.add('race__track-row');
+        riderRow.append(rider);
+        raceTrack.appendChild(riderRow);
+    }
+
+    function startRace() {
+        setTimeout( () => {
+            selectedRiders.forEach( (rider) => {
+                rider.style.transform = `translateX(${888}px)`
+            })
+        }, 0)
+        // setTimeout( () => {
+        //     setRidersSpeed(12, 13)
+        //     rider.style.transform = `translateX(${600}px)`;
+        // }, 3000) // not working
+        // setTimeout( () => {}, 200)
+        // setTimeout( () => {}, 200)
+        // setTimeout( () => {}, 200)
+        // setTimeout( () => {}, 200)
+        // setTimeout( () => {}, 200)
+    }
+
+    function setRidersSpeed(min, max) {
+        selectedRiders.forEach( (rider) => {
+            const randomSpeed = getRandomNumber(min, max);
+            rider.style.transition = `all ${randomSpeed}s linear`
+        })
+    }
+
+
+
+
+    // FINISH PEDESTAL
+
+
+
+
+    // COMMON
+    function getSelectedRiders() {
+        return document.querySelectorAll('.rider__placeholder.rider-selected');
+    }
+
+    function showSection(sectionNum) {
+        const sectionHeight = gameWrapper.clientHeight;
+        gameWrapper.style.transform = `translateY(-${sectionHeight * (sectionNum - 1)}px)`
+    }
+
+    function getRandomNumber(min, max) {
+        return Math.round(Math.random() * (max - min) + min )
     }
 })

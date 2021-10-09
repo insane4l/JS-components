@@ -9,7 +9,17 @@ body {
     background-color: #444;
 }
 
-.block-title {
+.game-wrapper {
+    width: 100%;
+    height: 100%;
+    // overflow: hidden;
+    .section {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.section-title {
     text-align: center;
     font-size: 30px;
     color: #fff;
@@ -42,12 +52,12 @@ body {
 .rider {
     &__placeholders {
         position: relative;
-        z-index: 999;
         display: flex;
         justify-content: space-between;
     }
     &__placeholder {
         position: relative;
+        z-index: 999;
         display: flex;
         justify-content: center;
         &-input {
@@ -104,7 +114,7 @@ body {
 
 
 
-.start__block {
+.start__section {
     width: 100%;
     padding: 20px 50px;
     &-title {
@@ -154,25 +164,56 @@ body {
     }
 }
 
-.race__block {
+.race__section {
     width: 100%;
     padding: 20px 50px;
     .race__track {
+        position: relative;
         &-row {
+            position: relative;
             width: 100%;
-            height: 140px;
+            height: 140px; // todo: responsive size (row height = rider__placeholder height)
             background-color: #dba458;
             border-top: 2px solid #ecd17e;
             border-bottom: 2px solid #ecd17e;
+            .rider__placeholder {
+                position: absolute;
+                width: 200px;
+                height: 130px;
+                // todo: responsive size (rider__placeholder width = finish col width)
+            }
+        }
+        &-finish-col {
+            position: absolute;
+            z-index: 300;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #81543f;
+            &::before {
+                content: '';
+                position: relative;
+                z-index: 333;
+                left: -50px;
+                display: block;
+                width: 50px;
+                height: 100%;
+                background-image: url(./images/finish-line.png);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
         }
     }
 }
 
 
 
-.finish__block {
+.finish__section {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     padding: 20px 50px;
 }
