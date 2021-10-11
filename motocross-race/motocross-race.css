@@ -238,16 +238,13 @@ body {
 }
 
 .finish__pedestal .rider__placeholder {
+  position: relative;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.finish__pedestal .contains-item.pedestal__place, .finish__pedestal .draghovered.pedestal__place {
-  position: relative;
-}
-
-.finish__pedestal .contains-item.pedestal__place::after, .finish__pedestal .draghovered.pedestal__place::after {
+.finish__pedestal .rider__placeholder::after {
   content: '';
   position: absolute;
   top: -77px;
@@ -270,14 +267,14 @@ body {
   color: #fff;
 }
 
-.finish__pedestal .contains-item.second-place::after, .finish__pedestal .draghovered.second-place::after {
+.finish__pedestal .rider__placeholder:nth-child(1)::after {
   content: '2';
   background-color: #59c2cf;
   -webkit-box-shadow: 0 0 15px 10px #59c2cf;
           box-shadow: 0 0 15px 10px #59c2cf;
 }
 
-.finish__pedestal .contains-item.first-place::after, .finish__pedestal .draghovered.first-place::after {
+.finish__pedestal .rider__placeholder:nth-child(2)::after {
   content: '1';
   font-size: 40px;
   background-color: #607ed7;
@@ -285,7 +282,7 @@ body {
           box-shadow: 0 0 15px 10px #607ed7;
 }
 
-.finish__pedestal .contains-item.third-place::after, .finish__pedestal .draghovered.third-place::after {
+.finish__pedestal .rider__placeholder:nth-child(3)::after {
   content: '3';
   background-color: #8848a8;
   -webkit-box-shadow: 0 0 15px 10px #8848a8;

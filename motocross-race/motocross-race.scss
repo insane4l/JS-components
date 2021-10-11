@@ -13,6 +13,7 @@ body {
     width: 100%;
     height: 100%;
     // overflow: hidden;
+    // transition: all 0.6s linear; // todo: race starts after "Ready, Steady, GO"
     .section {
         width: 100%;
         height: 100%;
@@ -233,53 +234,47 @@ body {
             height: 104px;
             margin-top: 33px;
         }
-        &__placeholder {
-            flex: 1;
-        }
-    }
-}
-.finish__pedestal {
-    .contains-item, .draghovered {
-        &.pedestal__place{
+        &__placeholder { // todo: riders name on the pedestal bottom
             position: relative;
+            flex: 1;
             &::after {
-            content: '';
-            position: absolute;
-            top: -77px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 40px;
-            width: 40px;
-            padding: 5px;
-            border-radius: 30px;
-            font-size: 30px;
-            font-weight: bold;
-            font-family: sans-serif;
-            color: #fff;
+                content: '';
+                position: absolute;
+                top: -77px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+                width: 40px;
+                padding: 5px;
+                border-radius: 30px;
+                font-size: 30px;
+                font-weight: bold;
+                font-family: sans-serif;
+                color: #fff;
             }
-        }
-        &.second-place{
-            &::after {
-                content: '2';
-                background-color: #59c2cf;
-                box-shadow: 0 0 15px 10px #59c2cf;
+            &:nth-child(1){
+                &::after {
+                    content: '2';
+                    background-color: #59c2cf;
+                    box-shadow: 0 0 15px 10px #59c2cf;
+                }
             }
-        }
-        &.first-place{
-            &::after {
-                content: '1';
-                font-size: 40px;
-                background-color: #607ed7;
-                box-shadow: 0 0 15px 10px #607ed7;
+            &:nth-child(2){
+                &::after {
+                    content: '1';
+                    font-size: 40px;
+                    background-color: #607ed7;
+                    box-shadow: 0 0 15px 10px #607ed7;
+                }
             }
-        }
-        &.third-place{
-            &::after {
-                content: '3';
-                background-color: #8848a8;
-                box-shadow: 0 0 15px 10px #8848a8;
-    
+            &:nth-child(3){
+                &::after {
+                    content: '3';
+                    background-color: #8848a8;
+                    box-shadow: 0 0 15px 10px #8848a8;
+        
+                }
             }
         }
     }
