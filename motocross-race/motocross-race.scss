@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Russo+One&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -6,14 +8,14 @@
 body {
     margin: 0;
     height: 100vh;
-    background-color: #444;
+    background-color: rgb(20, 20, 20);
 }
 
 .game-wrapper {
     width: 100%;
     height: 100%;
     // overflow: hidden;
-    // transition: all 0.6s linear; // todo: race starts after "Ready, Steady, GO"
+    transition: all 0.6s linear; // todo: race starts after "Ready, Steady, GO"
     .section {
         width: 100%;
         height: 100%;
@@ -21,9 +23,14 @@ body {
 }
 
 .section-title {
+    margin-bottom: 88px;
+    font-family: 'Russo One', sans-serif;
+    text-transform: uppercase;
     text-align: center;
     font-size: 30px;
+    letter-spacing: 0.1rem;
     color: #fff;
+    text-shadow: 0 0 33px #fff;
 }
 
 .selected-icon {
@@ -65,7 +72,7 @@ body {
             position: absolute;
             bottom: -20px;
             width: 80%;
-            height: 20px;
+            height: 20px; // todo: style for inputs
         }
     }
     &__item {
@@ -77,39 +84,12 @@ body {
         width: 130px;
         border-radius: 50%;
         background-color: transparent;
-        // &::after {
-        //     content: '';
-        //     display: block;
-        //     position: absolute;
-        //     top: -47px;
-        //     right: 25px;
-        //     font-family: sans-serif;
-        //     font-weight: 600;
-        //     // color: #fff;
-        //     color: #5ebd07;
-        //     text-shadow: 0 0 3px #111;
-        // }
         &-img {
             position: relative;
             background-color: transparent;
             width: 100%;
         }
     }
-    // &__item.rider-1 {
-    //     &::after {
-    //         content: '#199';
-    //     }
-    // }
-    // &__item.rider-2 {
-    //     &::after {
-    //         content: '#5';
-    //     }
-    // }
-    // &__item.rider-3 {
-    //     &::after {
-    //         content: '#2';
-    //     }
-    // }
 }
 
 
@@ -119,7 +99,6 @@ body {
     width: 100%;
     padding: 20px 50px;
     &-title {
-        margin-bottom: 60px;
     }
     .rider-selected .selected-icon {
         display: block;
@@ -174,9 +153,10 @@ body {
             position: relative;
             width: 100%;
             height: 140px; // todo: responsive size (row height = rider__placeholder height)
-            background-color: #dba458;
-            border-top: 2px solid #ecd17e;
-            border-bottom: 2px solid #ecd17e;
+            background-image: url(./images/track-bg.jpg);
+            background-position: 0 -100px; // todo:  
+            border-top: 1px solid #57471867;
+            border-bottom: 1px solid #57471867;
             .rider__placeholder {
                 position: absolute;
                 width: 200px;
@@ -191,7 +171,7 @@ body {
             right: 0;
             width: 200px;
             height: 100%;
-            background-color: #81543f;
+            background-image: url(./images/finish-col-bg.jpg);
             &::before {
                 content: '';
                 position: relative;
@@ -213,16 +193,17 @@ body {
 
 .finish__section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 20px 50px;
+    &-title {
+    }
 }
 .finish__pedestal {
     width: 626px;
     height: 215px;
-    margin-left: 25px;
-    margin-bottom: 60px;
     background-image: url(./images/finish-pedestal.jpg);
     background-position: center;
     background-repeat: no-repeat;

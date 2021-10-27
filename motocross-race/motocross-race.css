@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&family=Russo+One&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -6,12 +7,14 @@
 body {
   margin: 0;
   height: 100vh;
-  background-color: #444;
+  background-color: #141414;
 }
 
 .game-wrapper {
   width: 100%;
   height: 100%;
+  -webkit-transition: all 0.6s linear;
+  transition: all 0.6s linear;
 }
 
 .game-wrapper .section {
@@ -20,9 +23,14 @@ body {
 }
 
 .section-title {
+  margin-bottom: 88px;
+  font-family: 'Russo One', sans-serif;
+  text-transform: uppercase;
   text-align: center;
   font-size: 30px;
+  letter-spacing: 0.1rem;
   color: #fff;
+  text-shadow: 0 0 33px #fff;
 }
 
 .selected-icon {
@@ -106,10 +114,6 @@ body {
   padding: 20px 50px;
 }
 
-.start__section-title {
-  margin-bottom: 60px;
-}
-
 .start__section .rider-selected .selected-icon {
   display: block;
 }
@@ -169,9 +173,10 @@ body {
   position: relative;
   width: 100%;
   height: 140px;
-  background-color: #dba458;
-  border-top: 2px solid #ecd17e;
-  border-bottom: 2px solid #ecd17e;
+  background-image: url(./images/track-bg.jpg);
+  background-position: 0 -100px;
+  border-top: 1px solid #57471867;
+  border-bottom: 1px solid #57471867;
 }
 
 .race__section .race__track-row .rider__placeholder {
@@ -187,7 +192,7 @@ body {
   right: 0;
   width: 200px;
   height: 100%;
-  background-color: #81543f;
+  background-image: url(./images/finish-col-bg.jpg);
 }
 
 .race__section .race__track-finish-col::before {
@@ -208,6 +213,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -221,8 +230,6 @@ body {
 .finish__pedestal {
   width: 626px;
   height: 215px;
-  margin-left: 25px;
-  margin-bottom: 60px;
   background-image: url(./images/finish-pedestal.jpg);
   background-position: center;
   background-repeat: no-repeat;
