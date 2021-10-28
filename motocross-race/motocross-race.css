@@ -23,7 +23,7 @@ body {
 }
 
 .section-title {
-  margin-bottom: 88px;
+  margin-bottom: 120px;
   font-family: 'Russo One', sans-serif;
   text-transform: uppercase;
   text-align: center;
@@ -41,21 +41,18 @@ body {
   width: 22px;
 }
 
-.rider__placeholder-input {
-  display: none;
-}
-
 .rider__placeholder-name {
   display: none;
   position: absolute;
+  top: -28px;
   width: 100%;
+  overflow: hidden;
   padding-left: 5px;
+  font-family: 'Russo One';
   font-size: 19px;
   letter-spacing: 0.4px;
-  color: #59af50;
   text-transform: uppercase;
-  top: -28px;
-  overflow: hidden;
+  color: #59af50;
 }
 
 .rider__placeholders {
@@ -81,9 +78,41 @@ body {
 
 .rider__placeholder-input {
   position: absolute;
-  bottom: -20px;
-  width: 80%;
-  height: 20px;
+  bottom: 0;
+  width: 10%;
+  height: 25px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  color: #555;
+  -webkit-box-shadow: 0 0 15px 4px #fff;
+          box-shadow: 0 0 15px 4px #fff;
+  opacity: 0;
+  cursor: inherit;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.rider__placeholder-input::-webkit-input-placeholder {
+  color: transparent;
+  text-transform: none;
+}
+
+.rider__placeholder-input:-ms-input-placeholder {
+  color: transparent;
+  text-transform: none;
+}
+
+.rider__placeholder-input::-ms-input-placeholder {
+  color: transparent;
+  text-transform: none;
+}
+
+.rider__placeholder-input::placeholder {
+  color: transparent;
+  text-transform: none;
 }
 
 .rider__item {
@@ -124,6 +153,26 @@ body {
 
 .start__section .edit-name-mode .rider__placeholder-input {
   display: block;
+  bottom: -35px;
+  width: 80%;
+  cursor: text;
+  opacity: 1;
+}
+
+.start__section .edit-name-mode .rider__placeholder-input::-webkit-input-placeholder {
+  color: #777;
+}
+
+.start__section .edit-name-mode .rider__placeholder-input:-ms-input-placeholder {
+  color: #777;
+}
+
+.start__section .edit-name-mode .rider__placeholder-input::-ms-input-placeholder {
+  color: #777;
+}
+
+.start__section .edit-name-mode .rider__placeholder-input::placeholder {
+  color: #777;
 }
 
 .start__section .rider__placeholder {
@@ -145,7 +194,7 @@ body {
   display: block;
   width: 200px;
   padding: 10px;
-  margin: 80px auto;
+  margin: 100px auto;
   border-radius: 10px;
   background-color: #fff;
   -webkit-box-shadow: 0 0 15px 4px #fff;
@@ -267,7 +316,7 @@ body {
   height: 40px;
   width: 40px;
   padding: 5px;
-  border-radius: 30px;
+  border-radius: 50%;
   font-size: 30px;
   font-weight: bold;
   font-family: sans-serif;
@@ -283,6 +332,9 @@ body {
 
 .finish__pedestal .rider__placeholder:nth-child(2)::after {
   content: '1';
+  top: -95px;
+  height: 57px;
+  width: 57px;
   font-size: 40px;
   background-color: #607ed7;
   -webkit-box-shadow: 0 0 15px 10px #607ed7;
