@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     startRaceBtn.addEventListener('click', startGame);
 
     function startGame(e) {
-        e.target.classList.add('spin');
+        e.currentTarget.classList.add('spin');
         setTimeout( () => e.target.classList.remove('spin'), 1000);
         selectedRiders = getSelectedRiders();
         showSection(2);

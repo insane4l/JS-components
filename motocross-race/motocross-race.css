@@ -190,11 +190,20 @@ body {
   right: -26px;
 }
 
-.start__section .start-btn {
-  display: block;
+.start__section .start__btn {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 200px;
-  padding: 10px;
-  margin: 100px auto;
+  height: 125px;
+  margin: 130px auto;
   border-radius: 10px;
   background-color: #fff;
   -webkit-box-shadow: 0 0 15px 4px #fff;
@@ -204,9 +213,38 @@ body {
   cursor: pointer;
 }
 
-.start__section .start-btn:hover {
+.start__section .start__btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0 0 15px 4px #fff, 0 0 20px 4px #fff;
+          box-shadow: 0 0 15px 4px #fff, 0 0 20px 4px #fff;
   -webkit-transform: rotate(10deg);
           transform: rotate(10deg);
+}
+
+.start__section .start__btn::before, .start__section .start__btn::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  -webkit-box-shadow: inherit;
+          box-shadow: inherit;
+  border-radius: inherit;
+}
+
+.start__section .start__btn::before {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+
+.start__section .start__btn::after {
+  -webkit-transform: rotate(-60deg);
+          transform: rotate(-60deg);
+}
+
+.start__section .start__btn-img {
+  height: 50%;
 }
 
 .race__section {
