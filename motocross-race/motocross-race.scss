@@ -222,6 +222,21 @@ body {
                 width: 200px;
                 height: 130px;
                 // todo: responsive size (rider__placeholder width = finish col width)
+                &-name {
+                    display: block;
+                    top: 24px;
+                    right: 165px;
+                    width: auto;
+                    padding: 1px;
+                    font-size: 16px;
+                    background-color: #8848a8;
+                    &::before {
+                        content: '[';
+                    }
+                    &::after {
+                        content: ']';
+                    }
+                }
             }
         }
         &-finish-col {
