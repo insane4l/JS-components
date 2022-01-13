@@ -33,6 +33,23 @@ body {
     text-shadow: 0 0 33px #fff;
 }
 
+.error-modal {
+    position: fixed;
+    top: 5%;
+    right: 2%;
+    padding: 15px 100px;
+    border-radius: 6px;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    border: 1px solid rgba(255, 255, 255, .4);
+    background-color: #000;
+    color: rgb(255, 81, 0);
+    box-shadow: 0 0 22px rgb(255, 81, 0);
+    z-index: 1111;
+    opacity: 0;
+}
+
 .selected-icon {
     display: none;
     position: absolute;
@@ -153,7 +170,7 @@ body {
         justify-content: center;
         align-items: center;
         width: 200px;
-        height: 125px;
+        height: 123px;
         margin: 130px auto;
         border-radius: 10px;
         background-color: #fff;
@@ -317,4 +334,24 @@ body {
 }
 .spin {
     animation: spin 0.6s linear;
+}
+
+
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    8% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.fade-in-out {
+    animation: fadeInOut 3s linear;
 }

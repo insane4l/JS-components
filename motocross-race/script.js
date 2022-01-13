@@ -63,7 +63,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // START RACE
-    startRaceBtn.addEventListener('click', startGame);
+    startRaceBtn.addEventListener('click', (e) => {
+        let riders = getSelectedRiders();
+
+        if (riders.length < 3) {
+            showError('Please select 3+ riders');
+        } else {
+            startGame(e);
+        }
+    });
 
     function startGame(e) {
         e.currentTarget.classList.add('spin');
@@ -207,5 +215,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getRandomNumber(min, max) {
         return Math.round(Math.random() * (max - min) + min )
+    }
+
+    function showError(message = 'Error', seconds = 3) {
+        let modal = document.createElement('div');
+        modal.classList.add('error-modal', 'fade-in-out');
+        modal.textContent = message;
+
+        document.body.appendChild(modal);
+        setTimeout(() => {
+            modal.remove();
+        }, seconds * 1000);
     }
 })
