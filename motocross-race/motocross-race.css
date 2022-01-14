@@ -68,9 +68,13 @@ body {
   padding-left: 5px;
   font-family: 'Russo One';
   font-size: 19px;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #59af50;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .rider__placeholders {
@@ -228,6 +232,10 @@ body {
           box-shadow: 0 0 15px 4px #fff;
   -webkit-transition: rotate 0.7s;
   transition: rotate 0.7s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 
@@ -358,8 +366,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 22px;
-  -webkit-box-shadow: 0 0 15px 10px #8848a8;
-          box-shadow: 0 0 15px 10px #8848a8;
 }
 
 .finish__pedestal .rider__placeholders {
@@ -422,6 +428,17 @@ body {
           box-shadow: 0 0 15px 10px #8848a8;
 }
 
+.finish__pedestal .rider__placeholder-name {
+  display: block;
+  top: 132px;
+  width: auto;
+  padding: 0;
+  font-size: 14px;
+  color: #fff;
+  text-shadow: 0 0 3px #fff;
+  background-color: transparent;
+}
+
 @-webkit-keyframes spin {
   100% {
     -webkit-transform: rotate(360deg);
@@ -474,5 +491,48 @@ body {
 .fade-in-out {
   -webkit-animation: fadeInOut 3s linear;
           animation: fadeInOut 3s linear;
+}
+
+@-webkit-keyframes winnersLight {
+  0% {
+    -webkit-box-shadow: 0 0 15px 10px #8848a8;
+            box-shadow: 0 0 15px 10px #8848a8;
+  }
+  25% {
+    -webkit-box-shadow: 0 0 15px 10px #59c2cf;
+            box-shadow: 0 0 15px 10px #59c2cf;
+  }
+  75% {
+    -webkit-box-shadow: 0 0 15px 10px #607ed7;
+            box-shadow: 0 0 15px 10px #607ed7;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 15px 10px #8848a8;
+            box-shadow: 0 0 15px 10px #8848a8;
+  }
+}
+
+@keyframes winnersLight {
+  0% {
+    -webkit-box-shadow: 0 0 15px 10px #8848a8;
+            box-shadow: 0 0 15px 10px #8848a8;
+  }
+  25% {
+    -webkit-box-shadow: 0 0 15px 10px #59c2cf;
+            box-shadow: 0 0 15px 10px #59c2cf;
+  }
+  75% {
+    -webkit-box-shadow: 0 0 15px 10px #607ed7;
+            box-shadow: 0 0 15px 10px #607ed7;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 15px 10px #8848a8;
+            box-shadow: 0 0 15px 10px #8848a8;
+  }
+}
+
+.winners-light {
+  -webkit-animation: winnersLight 6s infinite;
+          animation: winnersLight 6s infinite;
 }
 /*# sourceMappingURL=motocross-race.css.map */

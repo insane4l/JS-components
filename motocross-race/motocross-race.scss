@@ -66,9 +66,10 @@ body {
     padding-left: 5px;
     font-family: 'Russo One';
     font-size: 19px;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #59af50;
+    user-select: none;
 }
 
 
@@ -285,7 +286,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 22px;
-    box-shadow: 0 0 15px 10px #8848a8;
     .rider {
         &__placeholders {
             height: 104px;
@@ -336,6 +336,16 @@ body {
         
                 }
             }
+            &-name {
+                display: block;
+                top: 132px;
+                width: auto;
+                padding: 0;
+                font-size: 14px;
+                color: #fff;
+                text-shadow: 0 0 3px #fff;
+                background-color: transparent;
+            }
         }
     }
 }
@@ -370,4 +380,25 @@ body {
 }
 .fade-in-out {
     animation: fadeInOut 3s linear;
+}
+
+
+
+
+@keyframes winnersLight {
+    0% {
+        box-shadow: 0 0 15px 10px #8848a8;
+    }
+    25% {
+        box-shadow: 0 0 15px 10px #59c2cf;
+    }
+    75% {
+        box-shadow: 0 0 15px 10px #607ed7;
+    }
+    100% {
+        box-shadow: 0 0 15px 10px #8848a8;
+    }
+}
+.winners-light {
+    animation: winnersLight 6s infinite; //infinite
 }
