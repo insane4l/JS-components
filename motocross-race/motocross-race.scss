@@ -176,6 +176,7 @@ body {
         background-color: #fff;
         box-shadow: 0 0 15px 4px #fff;
         transition: rotate 0.7s;
+        user-select: none;
         cursor: pointer;
         &:hover {
             background-color: rgba(#fff, .4);

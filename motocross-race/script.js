@@ -48,8 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if ( targetPlaceholder.classList.contains('edit-name-mode') ) { // onChange (the event will happen before onBlur)
+
+            if (e.target.value.replace(/\s/g, '').length === 0 || e.target.value.replace(/\s/g, '').length > 8) {
+                showError('Please enter 1-8 characters');
+                const riderPlaceholder = e.target.closest('.rider__placeholder');
+                const placeholderInput = riderPlaceholder.querySelector('.rider__placeholder-input')
+                placeholderInput.focus();
+                return
+            }
+
             const riderName = targetPlaceholder.querySelector('.rider__placeholder-name');
-            riderName.textContent = e.target.value;
+            riderName.textContent = e.target.value.trim();
             targetPlaceholder.classList.remove('edit-name-mode');
             e.target.value = '';
             targetPlaceholder.classList.add('rider-selected');
