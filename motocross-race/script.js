@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const firstPlace = results.indexOf(sorted[0]);
         const secondPlace = results.indexOf(sorted[1]);
         const thirdPlace = results.indexOf(sorted[2]);
-        debugger;
+
         return [ riders[secondPlace], riders[firstPlace], riders[thirdPlace] ];
     }
 
@@ -199,11 +199,16 @@ document.addEventListener('DOMContentLoaded', function() {
     function showWinners(riders) {
         showSection(3);
 
+        let pedestal = winnersPedestal.closest('.finish__pedestal');
+        let finishTitle = document.querySelector('.finish__section-title');
+        pedestal.classList.add('enlarge-pedestal');
+        finishTitle.classList.add('enlarge-pedestal');
+
         riders.forEach( (el) => {
             el.style.transition = 'all 3s linear'; // todo: riders animation when winners pedestal will show
             el.style.transform = `translateX(0)`;
         })
-        console.log(riders);
+
         winnersPedestal.appendChild(riders[0]);
         winnersPedestal.appendChild(riders[1]);
         winnersPedestal.appendChild(riders[2]);
