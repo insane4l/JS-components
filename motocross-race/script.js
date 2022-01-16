@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const gameWrapper = document.querySelector('#game-wrapper');
     const startRaceBtn = document.querySelector('#start-btn');
     const raceTrack = document.querySelector('#race-track');
-    const winnersPedestal = document.querySelector('#pedestal-places');
+    const winnersRow = document.querySelector('#pedestal-places');
     const ridersListItems = document.querySelectorAll('.start__section .rider__placeholder');
     const placeholderInputs = document.querySelectorAll('.rider__placeholder-input');
 
@@ -198,20 +198,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showWinners(riders) {
         showSection(3);
-
-        let pedestal = winnersPedestal.closest('.finish__pedestal');
+ 
+        let pedestalWrapper = winnersRow.closest('.finish__pedestal-wrapper');
+        let pedestal = winnersRow.closest('.finish__pedestal');
         let finishTitle = document.querySelector('.finish__section-title');
-        pedestal.classList.add('enlarge-pedestal');
+        pedestalWrapper.classList.add('enlarge-pedestal');
         finishTitle.classList.add('enlarge-pedestal');
+        pedestal.classList.add('winners-lighting');
 
         riders.forEach( (el) => {
             el.style.transition = 'all 3s linear'; // todo: riders animation when winners pedestal will show
             el.style.transform = `translateX(0)`;
         })
 
-        winnersPedestal.appendChild(riders[0]);
-        winnersPedestal.appendChild(riders[1]);
-        winnersPedestal.appendChild(riders[2]);
+        winnersRow.appendChild(riders[0]);
+        winnersRow.appendChild(riders[1]);
+        winnersRow.appendChild(riders[2]);
     }
 
 
